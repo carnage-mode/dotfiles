@@ -1,6 +1,7 @@
 return {
   "echasnovski/mini.nvim",
   version = "*",
+
   config = function()
     local minipairs = require "mini.pairs"
     minipairs.setup()

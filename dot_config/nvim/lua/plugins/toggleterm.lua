@@ -1,6 +1,7 @@
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
+
   opts = {
     size = 20,
     open_mapping = [[<c-t>]],
@@ -14,6 +15,7 @@ return {
     persist_size = true,
     direction = "float",
     close_on_exit = true,
+
     float_opts = {
       border = "curved",
     },

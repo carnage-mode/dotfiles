@@ -1,4 +1,4 @@
-return { -- Commenting support
+return {
   "numToStr/Comment.nvim",
   opts = {},
 }

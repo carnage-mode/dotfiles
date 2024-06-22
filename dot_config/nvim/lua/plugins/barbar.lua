@@ -1,8 +1,10 @@
 return {
   "romgrk/barbar.nvim",
+
   init = function()
     vim.g.barbar_auto_setup = false
   end,
+
   config = function()
     local map = vim.api.nvim_set_keymap
     local opts = { noremap = true, silent = true }
