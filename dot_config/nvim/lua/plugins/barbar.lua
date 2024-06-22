@@ -24,7 +24,11 @@ return {
     -- Magic buffer-picking mode
     map("n", "<LocalLeader>m", "<Cmd>BufferPick<CR>", { desc = "Magic Buffer Select Mode", table.unpack(opts) })
 
-    require("barbar").setup()
+    require("barbar").setup {
+      animation = false,
+      clickable = true,
+      focus_on_close = "previous",
+    }
   end,
   version = "^1.0.0", -- optional: only update when a new 1.x version is released
 }
