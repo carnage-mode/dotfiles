@@ -8,16 +8,16 @@ return {
 
     require("mini.move").setup {
       mappings = {
-        left = "<M-S-h>",
-        right = "<M-S-l>",
-        down = "<M-S-j>",
-        up = "<M-S-k>",
+        left = "<C-A-h>",
+        right = "<C-A-l>",
+        down = "<C-A-j>",
+        up = "<C-A-k>",
 
         -- Move current line in Normal mode
-        line_left = "<M-S-h>",
-        line_right = "<M-S-l>",
-        line_down = "<M-S-j>",
-        line_up = "<M-S-k>",
+        line_left = "<C-A-h>",
+        line_right = "<C-A-l>",
+        line_down = "<C-A-j>",
+        line_up = "<C-A-k>",
       },
     }
   end,
