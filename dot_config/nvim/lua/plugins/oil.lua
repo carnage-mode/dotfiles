@@ -7,7 +7,7 @@ return {
         [".."] = "actions.parent",
       },
     }
-    vim.keymap.set("n", "<leader>bf", "<CMD>Oil<CR>", { desc = "Browse Files" })
+    vim.keymap.set("n", "<leader>fb", "<CMD>Oil<CR>", { desc = "Browse Files" })
   end,
 
   dependencies = { "nvim-tree/nvim-web-devicons" },
