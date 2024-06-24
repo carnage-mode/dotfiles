@@ -29,5 +29,6 @@ return {
     local builtin = require "telescope.builtin"
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files in current working dir" })
     vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search for string in current working dir" })
+    vim.keymap.set("n", "<leader>q", builtin.diagnostics, { desc = "Open diagnostic [Q]uickfix list" })
   end,
 }
