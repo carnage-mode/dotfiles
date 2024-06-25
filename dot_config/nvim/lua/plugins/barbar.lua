@@ -9,6 +9,8 @@ return {
     local map = vim.api.nvim_set_keymap
     local opts = { noremap = true, silent = true }
 
+    table.unpack = table.unpack or unpack -- compatibility fix
+
     -- Move to previous/next
     map("n", "<A-h>", "<Cmd>BufferPrevious<CR>", { desc = "Previous Buffer", table.unpack(opts) })
     map("n", "<A-l>", "<Cmd>BufferNext<CR>", { desc = "Next Buffer", table.unpack(opts) })
