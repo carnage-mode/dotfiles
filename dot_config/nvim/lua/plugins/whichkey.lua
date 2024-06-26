@@ -15,6 +15,8 @@ return {
     wk.register {
       ["<leader>f"] = { name = "+file" },
       ["<leader>g"] = { name = "+git" },
+      ["<leader>d"] = { name = "+debugger" },
+      ["<leader>t"] = { name = "+toggle" },
     }
   end,
 }
