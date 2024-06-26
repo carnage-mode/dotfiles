@@ -8,7 +8,9 @@ return {
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     { "j-hui/fidget.nvim", opts = {} },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/neodev.nvim", opts = {
+      library = { plugins = { "nvim-dap-ui" }, types = true },
+    } },
   },
 
   config = function()
