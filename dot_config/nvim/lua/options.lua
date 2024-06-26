@@ -24,8 +24,13 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- disable mouse click
-vim.opt.mouse = ""
+
+-- Enable mouse click
+vim.opt.mouse = "a"
+
+-- Configure how new splits should be opened
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
 -- indentation behavior
 vim.opt.autoindent = true
@@ -102,3 +107,11 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagn
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
 vim.keymap.set("n", "<leader>?", "<CMD>WhichKey<CR>", { desc = "Show keyboard shortcut hints" })
+
+vim.keymap.set("n", "<Leader>sh", "<CMD>split<CR>", { desc = "[H]orizontally" })
+vim.keymap.set("n", "<Leader>sv", "<CMD>vsplit<CR>", { desc = "[V]ertically" })
+vim.keymap.set("n", "<Leader>sc", "<C-w><C-c>", { desc = "[C]lose" })
+vim.keymap.set("n", "<LocalLeader>h", "<C-w><C-h>", { desc = "Move Focus To The Left Window" })
+vim.keymap.set("n", "<LocalLeader>l", "<C-w><C-l>", { desc = "Move Focus To The Right Window" })
+vim.keymap.set("n", "<LocalLeader>j", "<C-w><C-j>", { desc = "Move Focus To The Lower Window" })
+vim.keymap.set("n", "<LocalLeader>k", "<C-w><C-k>", { desc = "Move Focus To The Upper Window" })

@@ -17,6 +17,7 @@ return {
       ["<leader>g"] = { name = "+git" },
       ["<leader>d"] = { name = "+debugger" },
       ["<leader>t"] = { name = "+toggle" },
+      ["<leader>s"] = { name = "+split" },
     }
   end,
 }
