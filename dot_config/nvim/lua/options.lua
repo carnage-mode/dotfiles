@@ -27,8 +27,8 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
--- Enable mouse click
-vim.opt.mouse = "a"
+-- Disable mouse click
+vim.opt.mouse = ""
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
