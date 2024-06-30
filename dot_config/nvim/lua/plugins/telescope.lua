@@ -27,8 +27,9 @@ return {
     require("telescope").load_extension "fzf"
 
     local builtin = require "telescope.builtin"
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files in current working dir" })
-    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Search for string in current working dir" })
+    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [f]iles in current working dir" })
+    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[G]rep strings in current working dir" })
+    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [buffers]" })
     vim.keymap.set("n", "<leader>q", builtin.diagnostics, { desc = "Open diagnostic [Q]uickfix list" })
   end,
 }
