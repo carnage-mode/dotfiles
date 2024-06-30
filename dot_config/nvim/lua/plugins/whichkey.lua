@@ -18,6 +18,7 @@ return {
       ["<leader>d"] = { name = "+debugger" },
       ["<leader>t"] = { name = "+toggle" },
       ["<leader>s"] = { name = "+split" },
+      ["<leader>b"] = { name = "+browse" },
     }
   end,
 }

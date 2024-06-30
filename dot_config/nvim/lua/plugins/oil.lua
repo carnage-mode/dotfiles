@@ -5,9 +5,11 @@ return {
     require("oil").setup {
       keymaps = {
         [".."] = "actions.parent",
+        ["."] = "actions.cd",
+        ["<Esc>"] = "actions.close",
       },
     }
-    vim.keymap.set("n", "<leader>fb", "<CMD>Oil<CR>", { desc = "Browse Files" })
+    vim.keymap.set("n", "<leader>bf", "<CMD>Oil --float<CR>", { desc = "[B]rowse [F]iles" })
   end,
 
   dependencies = { "nvim-tree/nvim-web-devicons" },
