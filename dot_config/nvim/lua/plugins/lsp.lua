@@ -64,7 +64,7 @@ return {
         "emmet_language_server",
         "html",
         "lua_ls",
-        -- "phpactor",
+        "phpactor",
         "pyright",
         "tsserver",
         "vimls",
