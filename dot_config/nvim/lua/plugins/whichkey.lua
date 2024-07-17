@@ -8,17 +8,27 @@ return {
   end,
 
   config = function()
-    require("which-key").setup {}
+    require("which-key").setup {
+      preset = "helix",
+      icons = {
+        mappings = false,
+        keys = {
+          S = "Shift ",
+          C = "Ctrl ",
+          M = "Alt ",
+        },
+      },
+    }
 
     local wk = require "which-key"
 
-    wk.register {
-      ["<leader>f"] = { name = "+file" },
-      ["<leader>g"] = { name = "+git" },
-      ["<leader>d"] = { name = "+debugger" },
-      ["<leader>t"] = { name = "+toggle" },
-      ["<leader>s"] = { name = "+split" },
-      ["<leader>b"] = { name = "+browse" },
+    wk.add {
+      { "<leader>f", group = "+file" },
+      { "<leader>g", group = "+git" },
+      { "<leader>d", group = "+debugger" },
+      { "<leader>t", group = "+toggle" },
+      { "<leader>s", group = "+split" },
+      { "<leader>b", group = "+browse" },
     }
   end,
 }
