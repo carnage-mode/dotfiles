@@ -6,6 +6,20 @@ return {
     local minipairs = require "mini.pairs"
     minipairs.setup()
 
+    local gen_ai_spec = require("mini.extra").gen_ai_spec
+
+    require("mini.ai").setup {
+      custom_textobjects = {
+        B = gen_ai_spec.buffer(),
+        D = gen_ai_spec.diagnostic(),
+        I = gen_ai_spec.indent(),
+        L = gen_ai_spec.line(),
+        N = gen_ai_spec.number(),
+      },
+    }
+
+    require("mini.surround").setup()
+
     require("mini.move").setup {
       mappings = {
         left = "<C-A-h>",
