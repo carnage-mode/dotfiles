@@ -25,6 +25,20 @@ return {
         program = function()
           return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
         end,
+        args = function()
+          local function split(str, delimiter)
+            local result = {}
+            for match in (str .. delimiter):gmatch("(.-)" .. delimiter) do
+              table.insert(result, match)
+            end
+            return result
+          end
+
+          local str = vim.fn.input "Arguments: "
+          local delimiter = " "
+
+          return split(str, delimiter)
+        end,
         cwd = "${workspaceFolder}",
         stopAtEntry = true,
       },
