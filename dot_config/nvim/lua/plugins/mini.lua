@@ -3,8 +3,7 @@ return {
   version = "*",
 
   config = function()
-    local minipairs = require "mini.pairs"
-    minipairs.setup()
+    require("mini.pairs").setup()
 
     local gen_ai_spec = require("mini.extra").gen_ai_spec
 
