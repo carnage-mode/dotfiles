@@ -100,8 +100,8 @@ Key mappings
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
-vim.keymap.set("n", "<C-l>", "20zl", { desc = "Scroll Right" })
-vim.keymap.set("n", "<C-h>", "20zh", { desc = "Scroll Left" })
+vim.keymap.set("n", "<LocalLeader>l", "20zl", { desc = "Scroll Right" })
+vim.keymap.set("n", "<LocalLeader>h", "20zh", { desc = "Scroll Left" })
 
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
@@ -113,7 +113,7 @@ vim.keymap.set("n", "<leader>?", "<CMD>WhichKey<CR>", { desc = "Show keyboard sh
 vim.keymap.set("n", "<Leader>sh", "<CMD>split<CR>", { desc = "[H]orizontally" })
 vim.keymap.set("n", "<Leader>sv", "<CMD>vsplit<CR>", { desc = "[V]ertically" })
 vim.keymap.set("n", "<Leader>sc", "<C-w><C-c>", { desc = "[C]lose" })
-vim.keymap.set("n", "<LocalLeader>h", "<C-w><C-h>", { desc = "Move Focus To The Left Window" })
-vim.keymap.set("n", "<LocalLeader>l", "<C-w><C-l>", { desc = "Move Focus To The Right Window" })
-vim.keymap.set("n", "<LocalLeader>j", "<C-w><C-j>", { desc = "Move Focus To The Lower Window" })
-vim.keymap.set("n", "<LocalLeader>k", "<C-w><C-k>", { desc = "Move Focus To The Upper Window" })
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move Focus To The Left Window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move Focus To The Right Window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move Focus To The Lower Window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move Focus To The Upper Window" })
