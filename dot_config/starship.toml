@@ -21,6 +21,7 @@ vimcmd_symbol = "[<](green)"
 read_only = " ro"
 style = 'green'
 truncation_symbol = '.../'
+truncation_length = 2
 
 [git_commit]
 tag_symbol = " tag "
