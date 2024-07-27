@@ -1,11 +1,12 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
+    unbind "Ctrl g"
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
     }
     locked {
-        bind "Ctrl g" { SwitchToMode "Normal"; }
+        bind "Ctrl a" { SwitchToMode "Normal"; }
     }
     resize {
         bind "Ctrl n" { SwitchToMode "Normal"; }
@@ -145,7 +146,7 @@ keybinds {
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     shared_except "locked" {
-        bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Ctrl a" { SwitchToMode "Locked"; }
         bind "Ctrl q" { Quit; }
         bind "Alt n" { NewPane; }
         bind "Alt i" { MoveTab "Left"; }
@@ -212,7 +213,7 @@ plugins {
 //    - true
 //    - false (Default)
 //
-// simplified_ui true
+simplified_ui true
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
@@ -303,7 +304,7 @@ theme "adwaita"
 // Choose the mode that zellij uses when starting up.
 // Default: normal
 //
-// default_mode "locked"
+default_mode "locked"
 
 // Toggle enabling the mouse mode.
 // On certain configurations, or terminals this could
@@ -312,7 +313,7 @@ theme "adwaita"
 //   - true (default)
 //   - false
 //
-// mouse_mode false
+mouse_mode false
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -349,7 +350,7 @@ theme "adwaita"
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
 //
-// scrollback_editor "/usr/bin/vim"
+scrollback_editor "/usr/bin/nvim"
 
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
