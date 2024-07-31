@@ -7,6 +7,8 @@ return {
 
     require("mini.jump2d").setup()
 
+    require("mini.starter").setup()
+
     local gen_ai_spec = require("mini.extra").gen_ai_spec
 
     require("mini.ai").setup {
