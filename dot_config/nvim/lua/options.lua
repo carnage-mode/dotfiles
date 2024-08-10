@@ -93,6 +93,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+-- Disable spellchecking in terminal buffers
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  command = "setlocal nospell",
+})
+
 --[[
 
 Key mappings
