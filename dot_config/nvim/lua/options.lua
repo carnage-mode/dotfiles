@@ -18,7 +18,7 @@ vim.opt.swapfile = false -- disable swapfile
 vim.opt.backup = false
 vim.opt.writebackup = false
 
-vim.o.shell = "/usr/bin/env fish"
+vim.o.shell = os.getenv "SHELL"
 
 -- searching behaviour
 vim.opt.hlsearch = true
