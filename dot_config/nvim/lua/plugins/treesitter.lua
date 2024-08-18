@@ -4,6 +4,20 @@ return { -- Treesitter config
 
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
+    {
+      "nvim-treesitter/nvim-treesitter-context",
+      config = function()
+        require("treesitter-context").setup()
+
+        vim.api.nvim_set_hl(0, "TreesitterContextBottom", {
+          underline = true,
+        })
+
+        vim.api.nvim_set_hl(0, "TreesitterContextLineNumberBottom", {
+          underline = true,
+        })
+      end,
+    },
   },
 
   init = function()
