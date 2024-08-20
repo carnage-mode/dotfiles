@@ -11,6 +11,4 @@ return {
   },
 
   "rebelot/kanagawa.nvim",
-  "marko-cerovac/material.nvim",
-  "folke/tokyonight.nvim",
 }
