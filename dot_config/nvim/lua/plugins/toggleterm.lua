@@ -2,6 +2,19 @@ return {
   "akinsho/toggleterm.nvim",
   version = "*",
 
+  keys = {
+    { "<c-t>", desc = "Toggle terminal" },
+  },
+
+  cmd = {
+    "ToggleTerm",
+    "ToggleTermSendCurrentLine",
+    "ToggleTermSendVisualLines",
+    "ToggleTermSendVisualSelection",
+    "ToggleTermSetName",
+    "ToggleTermToggleAll",
+  },
+
   opts = {
     size = 20,
     open_mapping = [[<c-t>]],

@@ -3,9 +3,10 @@ return { -- Treesitter config
   build = ":TSUpdate",
 
   dependencies = {
-    "nvim-treesitter/nvim-treesitter-textobjects",
+    { "nvim-treesitter/nvim-treesitter-textobjects", event = "BufReadPre" },
     {
       "nvim-treesitter/nvim-treesitter-context",
+      event = "BufReadPre",
       config = function()
         require("treesitter-context").setup()
 

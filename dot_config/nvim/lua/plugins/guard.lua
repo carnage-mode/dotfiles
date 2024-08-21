@@ -1,5 +1,6 @@
 return {
   "nvimdev/guard.nvim",
+  event = "BufReadPre",
 
   dependencies = {
     "nvimdev/guard-collection",

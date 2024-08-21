@@ -3,11 +3,11 @@ return {
   branch = "v3.x",
 
   dependencies = {
-    "neovim/nvim-lspconfig",
+    { "neovim/nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
     { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-    { "j-hui/fidget.nvim", opts = {} },
+    { "j-hui/fidget.nvim", opts = {}, event = "LspAttach" },
   },
 
   config = function()

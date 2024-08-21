@@ -10,5 +10,8 @@ return {
     end,
   },
 
-  "rebelot/kanagawa.nvim",
+  {
+    "rebelot/kanagawa.nvim",
+    event = "VeryLazy",
+  },
 }
