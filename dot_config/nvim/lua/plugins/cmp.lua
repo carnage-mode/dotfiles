@@ -20,6 +20,10 @@ return {
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "path" },
+        {
+          name = "lazydev",
+          group_index = 0,
+        },
       },
       mapping = {
         ["<CR>"] = cmp.mapping.confirm { select = true },
