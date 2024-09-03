@@ -1,0 +1,127 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+
+if [ -z "$XDG_STATE_HOME" ]; then
+  export XDG_STATE_HOME="$HOME/.local/state"
+fi
+
+if [ -z "$XDG_DATA_HOME" ]; then
+  export XDG_DATA_HOME="$HOME/.local/share"
+fi
+
+if [ -z "$XDG_CONFIG_HOME" ]; then
+  export XDG_CONFIG_HOME="$HOME/.config"
+fi
+
+# homebrew stuff
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+if type brew &>/dev/null
+then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+  then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
+fi
+
+# Make homebrew libraries work
+export HOMEBREW_INC="$HOMEBREW_PREFIX/include/"
+export HOMEBREW_LIB="$HOMEBREW_PREFIX/lib/"
+export HOMEBREW_PKG="$HOMEBREW_PREFIX/lib/pkgconfig/"
+export C_INCLUDE_PATH="$HOMEBREW_INC:$C_INCLUDE_PATH"
+export CPLUS_INCLUDE_PATH="$HOMEBREW_INC:$CPLUS_INCLUDE_PATH"
+export LIBRARY_PATH="$HOMEBREW_LIB:$LIBRARY_PATH"
+export PKG_CONFIG_PATH="$HOMEBREW_PKG:$PKG_CONFIG_PATH"
+export LD_LIBRARY_PATH="$HOMEBREW_LIB:$LD_LIBRARY_PATH"
+export CMAKE_PREFIX_PATH="$HOMEBREW_PREFIX:$CMAKE_PREFIX_PATH"
+
+# Default editor
+export EDITOR="$(command -v nvim)"
+
+# More history!
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+
+# Shell niceties
+eval "$(starship init bash)"
+eval "$(fzf --bash)"
+
+# fzf stuff
+export FZF_DEFAULT_OPTS='
+  --height -3
+  --color=fg:-1,fg+:#DEDDDA,bg:-1,bg+:#303030
+  --color=hl:#62A0EA,hl+:#62A0EA,info:#C0BFBC,marker:#FF7800
+  --color=prompt:#57E389:regular,spinner:#9141AC:regular,pointer:#9141AC,header:#5BC8AF
+  --color=border:#262626,label:#C0BFBC,query:#DEDDDA:regular
+  --border="sharp" --border-label="" --preview-window="border-sharp" --prompt="$ "
+  --marker=">" --pointer="*" --separator="-" --scrollbar="│"
+  --layout="reverse"'
+
+export FZF_CTRL_T_OPTS="
+  --header 'Paste the selected files and directories onto the command-line '
+  --walker file,dir
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'"
+
+export FZF_ALT_C_OPTS="
+  --header 'cd into the selected directory '
+  --walker dir
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'"
+
+export FZF_CTRL_R_OPTS="
+  --header 'Paste the selected command from history onto the command-line'"
+
+# Remap C-t to C-o for fzf
+bind -x '"\C-o": fzf-file-widget'
+bind '"\C-t": transpose-chars'
+
+# Make certain things XDG compliant
+export HISTFILE="${XDG_STATE_HOME}"/bash/history
+export NODE_REPL_HISTORY="$XDG_STATE_HOME"/node_repl_history
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export CGDB_DIR="$XDG_CONFIG_HOME"/cgdb
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+# atac stuff
+export ATAC_MAIN_DIR="$HOME/dev/api"
+
+# sdkman stuff
+export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
+[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+
+# cargo stuff
+. "$CARGO_HOME/env"
+
+# volta stuff
+export VOLTA_HOME="$XDG_DATA_HOME/volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
