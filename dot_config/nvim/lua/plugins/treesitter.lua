@@ -1,5 +1,7 @@
 return { -- Treesitter config
   "nvim-treesitter/nvim-treesitter",
+  event = { "BufReadPre", "BufNewFile" },
+  cmd = { "TSInstallInfo", "TSInstall", "TSUpdate" },
   build = ":TSUpdate",
 
   dependencies = {
