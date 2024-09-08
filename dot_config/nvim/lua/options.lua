@@ -80,9 +80,6 @@ vim.opt.scrolloff = 8
 
 vim.g.termguicolors = true
 
--- Disable builtin statusbar on Startup screen
-vim.o.laststatus = 0
-
 -- disable builtin file manager
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
