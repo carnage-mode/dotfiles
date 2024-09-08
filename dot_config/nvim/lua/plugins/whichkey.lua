@@ -25,7 +25,6 @@ return {
     wk.add {
       { "<leader>f", group = "+file" },
       { "<leader>g", group = "+git" },
-      { "<leader>d", group = "+debugger" },
       { "<leader>t", group = "+toggle" },
       { "<leader>s", group = "+split" },
       { "<leader>b", group = "+browse" },

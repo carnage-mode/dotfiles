@@ -30,7 +30,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.opt.inccommand = "split"
 
 -- Disable mouse click
-vim.opt.mouse = ""
+vim.opt.mouse = "a"
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
