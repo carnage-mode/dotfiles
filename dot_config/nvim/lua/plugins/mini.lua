@@ -7,8 +7,6 @@ return {
 
     require("mini.jump2d").setup()
 
-    require("mini.starter").setup()
-
     require("mini.surround").setup {
       mappings = {
         add = "ma", -- Add surrounding in Normal and Visual modes
