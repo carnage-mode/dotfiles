@@ -8,6 +8,7 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-path",
+    "kristijanhusak/vim-dadbod-completion",
   },
 
   config = function()
@@ -25,6 +26,7 @@ return {
           name = "lazydev",
           group_index = 0,
         },
+        { name = "vim-dadbod-completion" },
       },
       mapping = {
         ["<CR>"] = cmp.mapping(function(fallback)
