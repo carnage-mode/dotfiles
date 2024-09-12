@@ -37,7 +37,10 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
 fi
 
 # homebrew stuff
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH="${PATH}:/home/linuxbrew/.linuxbrew/bin"
+export PATH="${PATH}:/home/linuxbrew/.linuxbrew/sbin"
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:/home/linuxbrew/.linuxbrew/share"
 
 if type brew &>/dev/null
 then
@@ -125,3 +128,4 @@ export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
 # volta stuff
 export VOLTA_HOME="$XDG_DATA_HOME/volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$PATH:$VOLTA_HOME/bin"
