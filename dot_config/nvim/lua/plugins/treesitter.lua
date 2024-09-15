@@ -35,6 +35,9 @@ return { -- Treesitter config
     local configs = require "nvim-treesitter.configs"
 
     configs.setup {
+      auto_install = true,
+      ignore_install = {},
+      modules = {},
       ensure_installed = {
         "bash",
         "c",

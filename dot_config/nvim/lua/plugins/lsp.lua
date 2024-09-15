@@ -111,7 +111,7 @@ return {
         "lua_ls",
         "phpactor",
         "pyright",
-        "tsserver",
+        "ts_ls",
         "vimls",
       },
       handlers = {
