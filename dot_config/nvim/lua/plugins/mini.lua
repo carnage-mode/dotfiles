@@ -5,8 +5,6 @@ return {
   config = function()
     require("mini.pairs").setup()
 
-    require("mini.jump2d").setup()
-
     require("mini.surround").setup {
       mappings = {
         add = "ma", -- Add surrounding in Normal and Visual modes
