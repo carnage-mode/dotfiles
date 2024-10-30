@@ -22,7 +22,5 @@ return {
       args = { "-s", "-" },
       stdin = true,
     }
-
-    require("guard").setup()
   end,
 }
