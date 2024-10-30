@@ -20,6 +20,8 @@ return {
       },
     }
 
+    require("mini.jump").setup()
+
     require("mini.move").setup {
       mappings = {
         left = "<C-A-h>",
