@@ -117,12 +117,11 @@ export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
 # volta stuff
 export VOLTA_HOME="$XDG_DATA_HOME/volta"
 export PATH="$PATH:$VOLTA_HOME/bin"
-export PATH="~/dev/tools/flutter/bin:$PATH"
 
 # android stuff
-export ANDROID_HOME=/var/home/beamanuel/dev/android/android_sdk
-export ANDROID_SDK_ROOT=/var/home/beamanuel/dev/android/android_sdk
-export PATH=$ANDROID_HOME/platform-tools:$PATH
+export ANDROID_HOME="/var/home/beamanuel/dev/android/android_sdk"
+export ANDROID_SDK_ROOT="/var/home/beamanuel/dev/android/android_sdk"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 # go stuff
 export GOPATH="$XDG_DATA_HOME/go"
