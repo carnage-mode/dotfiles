@@ -123,3 +123,7 @@ export PATH="~/dev/tools/flutter/bin:$PATH"
 export ANDROID_HOME=/var/home/beamanuel/dev/android/android_sdk
 export ANDROID_SDK_ROOT=/var/home/beamanuel/dev/android/android_sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+# go stuff
+export GOPATH="$XDG_DATA_HOME/go"
+export PATH="$PATH:$GOPATH/bin"
