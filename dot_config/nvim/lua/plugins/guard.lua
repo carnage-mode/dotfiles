@@ -22,5 +22,10 @@ return {
       args = { "-s", "-" },
       stdin = true,
     }
+
+    ft("go"):fmt {
+      cmd = "go",
+      args = { "fmt", "./..." },
+    }
   end,
 }
