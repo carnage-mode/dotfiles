@@ -126,3 +126,6 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 # go stuff
 export GOPATH="$XDG_DATA_HOME/go"
 export PATH="$PATH:$GOPATH/bin"
+
+alias renoise="chrt -f 99 renoise"
+alias reaper="chrt -f 99 reaper"
