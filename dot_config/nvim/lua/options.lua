@@ -50,6 +50,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt.textwidth = 80
+  end,
+})
+
 -- highlight whitespace
 vim.opt.list = true
 vim.opt.listchars = { space = ".", tab = "> " }
