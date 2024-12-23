@@ -5,6 +5,27 @@ return {
   config = function()
     require("mini.pairs").setup()
 
+    local animate = require "mini.animate"
+
+    require("mini.animate").setup {
+      scroll = {
+        timing = animate.gen_timing.cubic {
+          easing = "in-out",
+          duration = 100,
+          unit = "total",
+        },
+      },
+
+      cursor = {
+        enable = true,
+        path = animate.gen_path.spiral(),
+        timing = animate.gen_timing.cubic {
+          duration = 250,
+          unit = "total",
+        },
+      },
+    }
+
     require("mini.surround").setup {
       mappings = {
         add = "ma", -- Add surrounding in Normal and Visual modes
