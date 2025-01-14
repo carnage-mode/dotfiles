@@ -27,5 +27,7 @@ return {
       cmd = "go",
       args = { "fmt", "./..." },
     }
+
+    ft("tex"):fmt "latexindent"
   end,
 }
