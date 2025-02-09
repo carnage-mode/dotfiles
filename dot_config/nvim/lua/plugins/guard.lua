@@ -29,5 +29,11 @@ return {
     }
 
     ft("tex"):fmt "latexindent"
+
+    ft("c,cpp"):fmt {
+      cmd = "clang-format",
+      args = { "--style=file" },
+      stdin = true,
+    }
   end,
 }
