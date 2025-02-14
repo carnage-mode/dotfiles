@@ -23,11 +23,7 @@ return {
       stdin = true,
     }
 
-    ft("go"):fmt {
-      cmd = "go",
-      args = { "fmt", "./..." },
-    }
-
+    ft("go"):fmt "gofmt"
     ft("tex"):fmt "latexindent"
 
     ft("c,cpp"):fmt {
