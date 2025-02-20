@@ -4,6 +4,7 @@ return {
 
   dependencies = {
     "nvimdev/guard-collection",
+    { "williamboman/mason.nvim", config = true },
   },
 
   config = function()
