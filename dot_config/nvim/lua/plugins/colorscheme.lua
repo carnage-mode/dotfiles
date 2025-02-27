@@ -11,7 +11,7 @@ return {
   },
 
   {
-    "rebelot/kanagawa.nvim",
+    "p00f/alabaster.nvim",
     event = "VeryLazy",
   },
 }
