@@ -1,0 +1,10 @@
+frame = "none"
+
+[font]
+normal = ["Iosevka"] # Will use the bundled Fira Code Nerd Font by default
+size = 17.0
+hinting = "none"
+edging = "subpixelantialias"
+
+[font.features]
+"Iosevka" = ["-calt"]
