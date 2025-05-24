@@ -112,6 +112,15 @@ Key mappings
 
 --]]
 
+if vim.g.neovide then
+  vim.api.nvim_set_keymap("v", "<sc-c>", '"+y', { noremap = true })
+  vim.api.nvim_set_keymap("n", "<sc-v>", '"+p', { noremap = true })
+  vim.api.nvim_set_keymap("v", "<sc-v>", '"+p', { noremap = true })
+  vim.api.nvim_set_keymap("c", "<sc-v>", "<C-r>+", { noremap = true })
+  vim.api.nvim_set_keymap("i", "<sc-v>", "<C-r>+", { noremap = true })
+  vim.api.nvim_set_keymap("t", "<sc-v>", '<C-\\><C-n>"+pi', { noremap = true })
+end
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
