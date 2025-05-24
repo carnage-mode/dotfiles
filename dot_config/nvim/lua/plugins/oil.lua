@@ -7,6 +7,7 @@ return {
       keymaps = {
         [".."] = "actions.parent",
         ["."] = "actions.cd",
+        ["<C-t>"] = false,
         ["<Esc>"] = "actions.close",
       },
 
@@ -14,7 +15,7 @@ return {
         padding = 5,
       },
     }
-    vim.keymap.set("n", "<leader>bf", "<CMD>Oil --float<CR>", { desc = "[B]rowse [F]iles" })
+    vim.keymap.set("n", "<leader>bf", "<CMD>Oil<CR>", { desc = "[B]rowse [F]iles" })
   end,
 
   dependencies = { "nvim-tree/nvim-web-devicons" },
