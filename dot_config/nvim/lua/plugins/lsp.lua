@@ -4,8 +4,8 @@ return {
   cmd = "Mason",
 
   dependencies = {
-    { "williamboman/mason.nvim", config = true },
-    "williamboman/mason-lspconfig.nvim",
+    { "williamboman/mason.nvim", config = true, version = "^1.0.0" },
+    { "williamboman/mason-lspconfig.nvim", version = "^1.0.0" },
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     { "j-hui/fidget.nvim", opts = {}, event = "LspAttach" },
   },
@@ -103,6 +103,7 @@ return {
     require("mason").setup {}
 
     require("mason-lspconfig").setup {
+      automatic_enable = true,
       ensure_installed = {
         "clangd",
         "cssls",
