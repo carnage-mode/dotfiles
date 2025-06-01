@@ -5,6 +5,8 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 sudo flatpak remote-delete fedora
 sudo flatpak remote-delete fedora-testing
 
+sudo dnf remove firefox
+
 rustup default stable || exit 1
 
 rustup update || exit 1
