@@ -19,7 +19,6 @@ items = [
     "neovim",
     "syncthing",
     "tmux",
-    "toolbox",
 ]
 
 [managers.flatpak]
@@ -29,5 +28,5 @@ items = [
 
 [managers.cargo]
 items = [
-    "bacon",
+    "rebos",
 ]
