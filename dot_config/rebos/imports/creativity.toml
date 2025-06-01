@@ -1,0 +1,12 @@
+[managers.flatpak]
+items = [
+    "org.gimp.GIMP",
+    "org.telegram.desktop",
+    "org.inkscape.Inkscape",
+    "org.pipewire.Helvum",
+    "org.sugarlabs.MusicKeyboard",
+    "org.audacityteam.Audacity",
+    "fr.handbrake.ghb",
+    "fm.helio.Workstation",
+    "org.gnome.gitlab.YaLTeR.Identity",
+]

@@ -1,0 +1,9 @@
+add = "sudo dnf group install #:?"
+remove = "sudo dnf group remove #:?"
+
+plural_name = "group install packages"
+
+hook_name = "group_install_packages"
+
+[config]
+many_args = true

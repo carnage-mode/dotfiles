@@ -1,0 +1,11 @@
+[managers.flatpak]
+items = [
+    "com.valvesoftware.Steam",
+    "com.valvesoftware.Steam.CompatibilityTool.Proton-GE",
+    "com.valvesoftware.Steam.Utility.steamtinkerlaunch",
+    "com.spotify.Client",
+    "dev.bragefuglseth.Keypunch",
+    "io.bassi.Amberol",
+    "org.videolan.VLC",
+    "org.nickvision.tubeconverter",
+]

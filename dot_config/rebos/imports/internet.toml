@@ -1,0 +1,11 @@
+[managers.flatpak]
+items = [
+    "io.gitlab.librewolf-community",
+    "io.gitlab.news_flash.NewsFlash",
+    "org.chromium.Chromium",
+    "re.sonny.Junction",
+    "dev.geopjr.Tuba",
+    "org.gnome.Fractal",
+    "org.gnome.Epiphany",
+    "de.haeckerfelix.Fragments",
+]

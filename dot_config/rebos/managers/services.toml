@@ -1,0 +1,9 @@
+add = "sudo systemctl enable --now #:? || echo 'failed to enable services'"
+remove = "sudo systemctl disable --now #:? || echo 'failed to disable services'"
+
+plural_name = "system services (startup)"
+
+hook_name = "services_startup"
+
+[config]
+many_args = true

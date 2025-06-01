@@ -1,0 +1,33 @@
+imports = [
+    "bootstrap",
+    "creativity",
+    "desktop",
+    "development",
+    "entertainment",
+    "internet",
+    "productivity",
+    "utils",
+]
+
+[managers.system]
+items = [
+    "aerc",
+    "git",
+    "lazygit",
+    "starship",
+    "fzf",
+    "neovim",
+    "syncthing",
+    "tmux",
+    "toolbox",
+]
+
+[managers.flatpak]
+items = [
+    "com.github.tchx84.Flatseal",
+]
+
+[managers.cargo]
+items = [
+    "bacon",
+]

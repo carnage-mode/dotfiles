@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo dnf copr enable atim/lazygit -y || exit 1
+sudo dnf copr enable atim/starship -y || exit 1

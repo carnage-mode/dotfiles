@@ -1,0 +1,9 @@
+add = "sudo dnf install #:?"
+remove = "sudo dnf remove #:?"
+
+plural_name = "bootstrap packages"
+
+hook_name = "bootstrap_packages"
+
+[config]
+many_args = true

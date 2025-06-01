@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo || exit 1
+
+rustup default stable || exit 1
+
+rustup update || exit 1
