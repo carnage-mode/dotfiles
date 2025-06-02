@@ -1,6 +1,0 @@
-[managers.flatpak]
-items = [
-    "org.libreoffice.LibreOffice",
-    "org.onlyoffice.desktopeditors",
-    "org.electrum.electrum",
-]

@@ -14,13 +14,3 @@ items = [
     "libubsan",
     "meson",
 ]
-
-[managers.flatpak]
-items = [
-    "com.github.marhkb.Pods",
-    "com.usebruno.Bruno",
-    "org.gnome.Builder",
-    "app.devsuite.Manuals",
-    "org.gnome.GHex",
-    "io.gitlab.liferooter.TextPieces",
-]

@@ -21,11 +21,6 @@ items = [
     "tmux",
 ]
 
-[managers.flatpak]
-items = [
-    "com.github.tchx84.Flatseal",
-]
-
 [managers.cargo]
 items = [
     "rebos",
