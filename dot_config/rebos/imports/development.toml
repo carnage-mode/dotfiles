@@ -13,4 +13,5 @@ items = [
     "liblsan",
     "libubsan",
     "meson",
+    "ansible",
 ]
