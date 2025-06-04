@@ -6,6 +6,7 @@ return {
     event = "VimEnter",
 
     init = function()
+      vim.g.adwaita_darker = true
       vim.cmd "colorscheme adwaita"
     end,
   },
