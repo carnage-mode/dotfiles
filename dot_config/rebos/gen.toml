@@ -1,6 +1,7 @@
 imports = [
     "bootstrap",
     "development",
+    "misc",
 ]
 
 [managers.system]

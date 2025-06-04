@@ -1,0 +1,13 @@
+[managers.system]
+items = [
+    "pinentry",
+    "fontconfig-devel",
+    "libxkbcommon",
+    "libxkbcommon-devel",
+    "mesa-libGL",
+    "glew-devel",
+    "SDL2-devel",
+    "SDL2_image-devel",
+    "glm-devel",
+    "freetype-devel",
+]
