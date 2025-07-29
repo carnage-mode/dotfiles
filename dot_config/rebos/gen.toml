@@ -13,6 +13,8 @@ items = [
     "fzf",
     "neovim",
     "tmux",
+    "emacs",
+    "zoxide",
 ]
 
 [managers.cargo]
