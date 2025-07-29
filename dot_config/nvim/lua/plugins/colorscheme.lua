@@ -1,18 +1,17 @@
 return {
   {
-    "Mofiqul/adwaita.nvim",
+    "rebelot/kanagawa.nvim",
     lazy = false,
     priority = 1000,
     event = "VimEnter",
 
     init = function()
-      vim.g.adwaita_darker = true
-      vim.cmd "colorscheme adwaita"
+      vim.cmd "colorscheme kanagawa"
     end,
   },
 
   {
-    "p00f/alabaster.nvim",
+    "Mofiqul/adwaita.nvim",
     event = "VeryLazy",
   },
 }
