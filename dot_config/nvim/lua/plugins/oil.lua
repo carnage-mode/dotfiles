@@ -14,6 +14,10 @@ return {
       float = {
         padding = 5,
       },
+
+      view_options = {
+        show_hidden = true,
+      },
     }
     vim.keymap.set("n", "<leader>bf", "<CMD>Oil<CR>", { desc = "[B]rowse [F]iles" })
   end,
