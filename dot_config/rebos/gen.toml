@@ -15,6 +15,7 @@ items = [
     "tmux",
     "emacs",
     "zoxide",
+    "fish",
 ]
 
 [managers.cargo]

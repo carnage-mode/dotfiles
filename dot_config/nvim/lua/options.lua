@@ -130,6 +130,11 @@ Key mappings
 --]]
 
 if vim.g.neovide then
+  local fish_path = vim.fn.exepath "fish"
+
+  if fish_path ~= "" then
+    vim.o.shell = fish_path
+  end
   vim.api.nvim_set_keymap("v", "<sc-c>", '"+y', { noremap = true })
   vim.api.nvim_set_keymap("n", "<sc-v>", '"+p', { noremap = true })
   vim.api.nvim_set_keymap("v", "<sc-v>", '"+p', { noremap = true })
