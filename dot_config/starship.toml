@@ -14,7 +14,7 @@ style = 'green'
 
 [custom.toolbx]
 when = ''' test "$(hostname)" = "toolbx" '''
-format = '[❄]($style) '
+format = '[✳]($style) '
 style = 'purple'
 
 [character]
