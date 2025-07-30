@@ -1,0 +1,10 @@
+font-family = BbConsole
+font-size = 14
+
+# Color Scheme
+theme = NvimDark
+
+window-decoration = client
+window-theme = ghostty
+gtk-adwaita = true
+adw-toolbar-style = flat
