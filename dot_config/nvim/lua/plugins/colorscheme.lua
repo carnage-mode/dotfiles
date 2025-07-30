@@ -1,17 +1,5 @@
 return {
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = false,
-    priority = 1000,
-    event = "VimEnter",
+  "Mofiqul/adwaita.nvim",
 
-    init = function()
-      vim.cmd "colorscheme kanagawa"
-    end,
-  },
-
-  {
-    "Mofiqul/adwaita.nvim",
-    event = "VeryLazy",
-  },
+  "rebelot/kanagawa.nvim",
 }
