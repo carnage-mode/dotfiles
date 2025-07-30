@@ -1,7 +1,7 @@
 frame = "none"
 
 [font]
-normal = ["Iosevka"] # Will use the bundled Fira Code Nerd Font by default
+normal = ["BbConsole"]
 size = 17.0
 hinting = "none"
 edging = "subpixelantialias"
