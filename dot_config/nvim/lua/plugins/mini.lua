@@ -59,5 +59,8 @@ return {
         line_up = "<C-A-k>",
       },
     }
+
+    require("mini.icons").setup()
+    MiniIcons.mock_nvim_web_devicons()
   end,
 }
