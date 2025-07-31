@@ -7,7 +7,9 @@ imports = [
 [managers.system]
 items = [
     "aerc",
+    "bat",
     "git",
+    "git-subtree",
     "lazygit",
     "starship",
     "fzf",

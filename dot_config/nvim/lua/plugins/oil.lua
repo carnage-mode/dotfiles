@@ -4,6 +4,8 @@ return {
 
   config = function()
     require("oil").setup {
+      default_file_explorer = true,
+      watch_for_changes = true,
       keymaps = {
         [".."] = "actions.parent",
         ["."] = "actions.cd",
@@ -16,11 +18,25 @@ return {
       },
 
       view_options = {
-        show_hidden = true,
+        is_hidden_file = function(name, bufnr)
+          local dir = require("oil").get_current_dir(bufnr)
+          local home = vim.fn.expand "$HOME" .. "/"
+          local m = nil
+          if dir == home then
+            m = name:match "^%."
+          else
+            m = nil
+          end
+          return m ~= nil
+        end,
+        is_always_hidden = function(name, bufnr)
+          local m = name:match "^%.git$"
+          return m ~= nil
+        end,
       },
     }
     vim.keymap.set("n", "<leader>bf", "<CMD>Oil<CR>", { desc = "[B]rowse [F]iles" })
   end,
 
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { { "echasnovski/mini.nvim", opts = {} } },
 }
