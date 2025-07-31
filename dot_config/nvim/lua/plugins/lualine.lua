@@ -33,6 +33,20 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
+      inactive_winbar = {
+        lualine_a = {},
+        lualine_b = {
+          {
+            "filename",
+            newfile_status = true,
+            shorting_target = 40,
+          },
+        },
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+      },
     }
   end,
 }

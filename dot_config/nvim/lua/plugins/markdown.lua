@@ -4,7 +4,7 @@ return {
 
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
-    "nvim-tree/nvim-web-devicons",
+    "echasnovski/mini.nvim",
   },
 
   ---@module 'render-markdown'
