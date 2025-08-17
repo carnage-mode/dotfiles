@@ -111,7 +111,7 @@ return {
         "html",
         "lua_ls",
         "phpactor",
-        "pyright",
+        "basedpyright",
         "ts_ls",
         "vimls",
       },
@@ -135,6 +135,7 @@ return {
     require("mason-tool-installer").setup {
       ensure_installed = {
         "stylua",
+        "ruff",
       },
     }
   end,

@@ -27,6 +27,20 @@ return {
             newfile_status = true,
             shorting_target = 40,
           },
+          {
+            function()
+              local plenary = require "plenary"
+              local venv = require("venv-selector").venv()
+              if venv == nil then
+                return "no venv"
+              end
+              return plenary.path:new(venv):make_relative()
+            end,
+
+            cond = function()
+              return vim.bo.filetype == "python"
+            end,
+          },
         },
         lualine_c = {},
         lualine_x = {},

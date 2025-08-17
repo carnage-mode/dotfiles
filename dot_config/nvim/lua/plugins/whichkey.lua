@@ -28,6 +28,8 @@ return {
       { "<leader>t", group = "+toggle" },
       { "<leader>s", group = "+split" },
       { "<leader>b", group = "+browse" },
+      { "<leader>l", group = "+language" },
+      { "<leader>lp", group = "+python" },
     }
   end,
 }

@@ -23,6 +23,7 @@ return {
       stdin = true,
     }
 
+    ft("python"):fmt("ruff"):lint "ruff"
     ft("go"):fmt "gofmt"
     ft("tex"):fmt "latexindent"
   end,

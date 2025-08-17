@@ -6,6 +6,7 @@ return {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope-project.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
   },
 
   config = function()
@@ -45,6 +46,7 @@ return {
 
     telescope.load_extension "fzf"
     telescope.load_extension "project"
+    telescope.load_extension "ui-select"
 
     local builtin = require "telescope.builtin"
 
