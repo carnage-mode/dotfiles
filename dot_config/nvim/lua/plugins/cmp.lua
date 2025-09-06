@@ -1,79 +1,48 @@
 return {
-  "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
+  "saghen/blink.cmp",
+
+  version = "1.*",
 
   dependencies = {
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
-    "saadparwaiz1/cmp_luasnip",
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-path",
   },
 
-  config = function()
-    local cmp = require "cmp"
-    local luasnip = require "luasnip"
+  opts = {
+    keymap = { preset = "default" },
 
-    require("luasnip.loaders.from_vscode").lazy_load()
+    appearance = {
+      nerd_font_variant = "mono",
+    },
 
-    cmp.setup {
-      sources = {
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "path" },
-        {
-          name = "lazydev",
-          group_index = 0,
+    completion = {
+      documentation = { auto_show = true },
+      menu = {
+        draw = {
+          columns = {
+            { "label", "label_description", gap = 1 },
+            { "kind" },
+          },
+          treesitter = { "lsp" },
         },
       },
-      mapping = {
-        ["<CR>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            if luasnip.expandable() then
-              luasnip.expand()
-            else
-              cmp.confirm {
-                select = true,
-              }
-            end
-          else
-            fallback()
-          end
-        end),
+      -- list = { selection = { preselect = false } },
+    },
 
-        ["<Tab>"] = cmp.mapping(function(fallback)
-          -- This is taken from the LSP-Zero sources
-          local col = vim.fn.col "." - 1
+    sources = {
+      default = { "lsp", "path", "snippets", "buffer" },
+      snippets = { preset = "luasnip" },
+    },
 
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
-          elseif col == 0 or vim.fn.getline("."):sub(col, col):match "%s" then
-            fallback()
-          else
-            cmp.complete()
-          end
-        end, { "i", "s" }),
+    fuzzy = { implementation = "prefer_rust_with_warning" },
 
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
-          else
-            fallback()
-          end
-        end, { "i", "s" }),
-
-        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-d>"] = cmp.mapping.scroll_docs(4),
+    signature = {
+      enabled = true,
+      window = {
+        show_documentation = false,
       },
-      snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end,
-      },
-    }
-  end,
+    },
+  },
+
+  opts_extend = { "sources.default" },
 }

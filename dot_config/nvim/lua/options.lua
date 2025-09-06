@@ -123,6 +123,8 @@ vim.g.terminal_color_13 = "#ffcaff"
 vim.g.terminal_color_14 = "#8cf8f7"
 vim.g.terminal_color_15 = "#eef1f8"
 
+vim.api.nvim_set_hl(0, "BlinkCmpKind", { fg = "#8cf8f7" })
+
 --[[
 
 Key mappings

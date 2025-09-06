@@ -4,10 +4,11 @@ return {
   cmd = "Mason",
 
   dependencies = {
-    { "williamboman/mason.nvim", config = true, version = "^1.0.0" },
-    { "williamboman/mason-lspconfig.nvim", version = "^1.0.0" },
+    { "williamboman/mason.nvim", config = true },
+    { "williamboman/mason-lspconfig.nvim" },
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     { "j-hui/fidget.nvim", opts = {}, event = "LspAttach" },
+    "saghen/blink.cmp",
   },
 
   config = function()
@@ -92,7 +93,8 @@ return {
 
     -- Used to for communications between LSP servers and clients
     local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
-    lsp_capabilities = vim.tbl_deep_extend("force", lsp_capabilities, require("cmp_nvim_lsp").default_capabilities())
+    lsp_capabilities =
+      vim.tbl_deep_extend("force", lsp_capabilities, require("blink-cmp").get_lsp_capabilities({}, false))
 
     local default_setup = function(server)
       require("lspconfig")[server].setup {
