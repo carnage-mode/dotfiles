@@ -20,7 +20,7 @@ return {
 
             local plenary = require "plenary"
             -- local path = plenary.path:joinpath(venvs.venv(), "/bin/activate.fish")
-            local command = "source " .. venvs.venv() .. "/bin/activate.fish"
+            local command = "source " .. venvs.venv() .. "/bin/activate"
             vim.api.nvim_feedkeys(command .. "\n", "n", false)
           end
 
