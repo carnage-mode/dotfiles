@@ -2,6 +2,7 @@ return {
   {
     "linux-cultist/venv-selector.nvim",
     lazy = false,
+    ft = "python",
 
     dependencies = {
       "neovim/nvim-lspconfig",
