@@ -19,6 +19,7 @@ items = [
     "emacs",
     "zoxide",
     "fish",
+    "ghostty",
 ]
 
 [managers.cargo]
