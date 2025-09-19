@@ -3,11 +3,10 @@ font-family = BbConsole
 font-size = 14
 
 # Color Scheme
-theme = NvimDark
+theme = Nvim Dark
 
 window-decoration = client
 window-theme = ghostty
-gtk-adwaita = true
 adw-toolbar-style = flat
 
 mouse-scroll-multiplier = 4
