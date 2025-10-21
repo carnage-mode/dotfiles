@@ -9,6 +9,7 @@ items = [
     "aerc",
     "fd",
     "bat",
+    "chezmoi",
     "git",
     "git-subtree",
     "lazygit",
@@ -20,6 +21,7 @@ items = [
     "zoxide",
     "fish",
     "ghostty",
+    "pgcli"
 ]
 
 [managers.cargo]
