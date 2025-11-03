@@ -36,24 +36,12 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
   export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
-# homebrew stuff
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-export PATH="${PATH}:/home/linuxbrew/.linuxbrew/bin"
-export PATH="${PATH}:/home/linuxbrew/.linuxbrew/sbin"
-export XDG_DATA_DIRS="$XDG_DATA_DIRS:/home/linuxbrew/.linuxbrew/share"
-
-if type brew &>/dev/null
-then
-  HOMEBREW_PREFIX="$(brew --prefix)"
-  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
-  then
-    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
-    do
-      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
-    done
-  fi
+if [ -f "/run/.containerenv" ]; then
+  TOOLBOX_NAME=$(cat /run/.containerenv | grep 'name=' | sed -e 's/^name="\(.*\)"$/\1/')
+  alias docker="flatpak-spawn --host docker"
+  alias podman="flatpak-spawn --host podman"
+else
+  TOOLBOX_NAME=""
 fi
 
 # Default editor
@@ -116,8 +104,8 @@ export VOLTA_HOME="$XDG_DATA_HOME/volta"
 export PATH="$PATH:$VOLTA_HOME/bin"
 
 # android stuff
-export ANDROID_HOME="/var/home/beamanuel/dev/android/android_sdk"
-export ANDROID_SDK_ROOT="/var/home/beamanuel/dev/android/android_sdk"
+export ANDROID_HOME="$HOME/dev/android/android_sdk"
+export ANDROID_SDK_ROOT="$HOME/dev/android/android_sdk"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 # go stuff

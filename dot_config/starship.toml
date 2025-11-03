@@ -1,4 +1,4 @@
-format = "${custom.toolbx}$username$hostname$directory$git_branch$git_commit$git_state$git_status$status$character"
+format = "$container$username$hostname$directory$git_branch$git_commit$git_state$git_status$status$character"
 add_newline = false
 
 [username]
@@ -12,10 +12,10 @@ format = '[$ssh_symbol](purple)@[$hostname]($style):'
 ssh_symbol = ' ssh '
 style = 'green'
 
-[custom.toolbx]
-when = ''' test "$(hostname)" = "toolbx" '''
-format = ' [▽]($style) '
-style = 'purple'
+[container]
+symbol = "*"
+style = "blue"
+format = " [$symbol $name]($style) "
 
 [character]
 success_symbol = "\\$"
