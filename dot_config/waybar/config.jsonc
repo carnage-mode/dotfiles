@@ -1,0 +1,120 @@
+{
+    "layer": "top",
+    "modules-left": ["niri/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "privacy",
+        "network",
+        "custom/vpn",
+        "bluetooth",
+        "wireplumber",
+        "wireplumber#source",
+        "power-profiles-daemon",
+        "battery",
+    ],
+    "reload_style_on_change": true,
+    "battery": {
+        "format": "{capacity}%",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+    },
+    "clock": {
+        "tooltip-format": "<span size='15pt'><tt><small>{:%A}\n{calendar}</small></tt></span>",
+        "format": "{:%b %d %I:%M %p}",
+        "calendar": {
+            "mode-mon-col": 3,
+            "format": {
+                "months": "<span>{}</span>",
+                "days": "<span>{}</span>",
+                "weeks": "<span><b>W{}</b></span>",
+                "weekdays": "<span><b>{}</b></span>",
+                "today": "<span><b><u>{}</u></b></span>",
+            },
+        },
+    },
+    "network": {
+        "format": "conn",
+        "format-wifi": "wifi *",
+        "format-ethernet": "eth",
+        "format-disconnected": "<s>conn</s>",
+        "format-disabled": "<s>conn</s>",
+        "max-length": 20,
+        "tooltip": true,
+        "tooltip-format-wifi": "{essid}",
+        "tooltip-format-disconnected": "disconnected",
+        "tooltip-format-disabled": "disabled",
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "performance": "performance",
+        "balanced": "balanced",
+        "power-saver": "power saving"
+      }
+    },
+    "bluetooth": {
+        "interval": 5,
+        "format-on": "bluetooth",
+        "format-off": "<s>bluetooth</s>",
+        "format-disabled": "<s>bluetooth</s>",
+        "format-connected": "bluetooth *",
+        "format-no-controller": "<s>bluetooth</s>",
+        "tooltip": true,
+        "tooltip-format": "{device_enumerate}",
+        "tooltip-format-off": "off",
+        "tooltip-format-disabled": "disabled",
+        "tooltip-format-no-controller": "no controller",
+        "tooltip-format-enumerate-connected": "{device_alias}\n{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias} - {device_battery_percentage}% \n {device_address}",
+        "on-click-middle": "rfkill toggle bluetooth",
+    },
+    "wireplumber": {
+        "max-volume": 100.0,
+        "format": "out/{volume}",
+        "format-muted": "<s>out</s>",
+        "tooltip-format": "{node_name}",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "max-volume": 100,
+        "scroll-step": 5,
+    },
+    "wireplumber#source": {
+        "node-type": "Audio/Source",
+        "format": "in/{volume}",
+        "format-muted": "<s>in</s>",
+        "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "scroll-step": 5,
+        "max-volume": 100.0,
+    },
+    "custom/vpn": {
+       "interval": 1,
+       "format": "{}",
+       "exec": "nmcli con | grep -E 'vpn|wireguard' > /dev/null && echo vpn",
+       "max-length": "100",
+    },
+    "privacy": {
+        "modules": [
+            {
+                "format": "bruh",
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "format": "bruh",
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "format": "bruh",
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ],
+    },
+}

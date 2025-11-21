@@ -1,0 +1,101 @@
+* {
+  font-family: "BbConsole", monospace;
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+window#waybar {
+  background-color: #000;
+  padding: 16px 6px;
+  color: #fff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background: transparent;
+  color: white;
+}
+
+#workspaces button.focused {
+  background: white;
+  color: black;
+  border-bottom: 3px solid black;
+  border-radius: 0px;
+}
+
+.modules-right *,
+.modules-center * {
+  border-bottom: 3px solid black;
+  padding: 0 10px;
+}
+
+.modules-center *:hover,
+.modules-right *:hover {
+  border-bottom: 3px solid white;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: #8ff0a4;
+}
+
+#battery.charging:hover,
+#battery.plugged:hover {
+  border-color: #8ff0a4;
+}
+
+@keyframes blink_critical {
+  to {
+    background-color: #f66151;
+    color: #ffffff;
+  }
+}
+
+@keyframes blink_warning {
+  to {
+    color: #f9f06b;
+  }
+}
+
+#battery.warning:not(.charging) {
+  animation-name: blink_warning;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0, 0, 0.58, 1);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+  color: #f66151;
+  animation-name: blink_critical;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#power-profiles-daemon.performance {
+  color: #f66151;
+}
+
+#power-profiles-daemon.performance:hover {
+  border-color: #f66151;
+}
+
+#power-profiles-daemon.balanced {
+  color: #99c1f1;
+}
+
+#power-profiles-daemon.balanced:hover {
+  border-color: #99c1f1;
+}
+
+#power-profiles-daemon.power-saver {
+  color: #8ff0a4;
+}
+
+#power-profiles-daemon.power-saver:hover {
+  border-color: #8ff0a4;
+}
