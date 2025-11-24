@@ -75,7 +75,7 @@
     "wireplumber": {
         "max-volume": 100.0,
         "format": "out/{volume}",
-        "format-muted": "<s>out</s>",
+        "format-muted": "<s>out/{volume}</s>",
         "tooltip-format": "{node_name}",
         "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "max-volume": 100,
@@ -84,7 +84,7 @@
     "wireplumber#source": {
         "node-type": "Audio/Source",
         "format": "in/{volume}",
-        "format-muted": "<s>in</s>",
+        "format-muted": "<s>in/{volume}</s>",
         "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
         "scroll-step": 5,
         "max-volume": 100.0,
