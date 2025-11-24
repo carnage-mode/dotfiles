@@ -115,6 +115,7 @@ return {
         "basedpyright",
         "ts_ls",
         "vimls",
+        "postgres-language-server",
       },
       handlers = {
         default_setup,

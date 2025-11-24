@@ -5,8 +5,13 @@ font-size = 14
 # Color Scheme
 theme = Nvim Dark
 
-window-decoration = client
+window-decoration = none
 window-theme = ghostty
 adw-toolbar-style = flat
 
 mouse-scroll-multiplier = 4
+
+window-padding-x = 4
+window-padding-y = 4
+
+shell-integration-features = ssh-terminfo,ssh-env
