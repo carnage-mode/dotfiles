@@ -331,12 +331,22 @@ window-rule {
     default-column-width {}
 }
 
+window-rule {
+    match app-id=r#"^com\.obsproject\.Studio$"#
+    match app-id=r#"^org\.telegram\.desktop$"#
+    match app-id=r#"^mako$"#
+    block-out-from "screencast"
+}
+
+layer-rule {
+    match namespace="^notifications$"
+
+    block-out-from "screencast"
+}
+
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"librewolf$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
