@@ -101,7 +101,7 @@ export SDKMAN_DIR="$XDG_DATA_HOME/sdkman"
 
 # volta stuff
 export VOLTA_HOME="$XDG_DATA_HOME/volta"
-export PATH="$PATH:$VOLTA_HOME/bin"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # android stuff
 export ANDROID_HOME="$HOME/dev/android/android_sdk"
