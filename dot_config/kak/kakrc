@@ -2,12 +2,12 @@ nop %sh{
     mkdir -p "$kak_config/autoload"
     ln -s "$kak_runtime/rc" "$kak_config/autoload/standard-library"
 }
+colorscheme nvi
+cursorline
 
 add-highlighter global/ number-lines -relative -hlcursor -separator ' ' -min-digits 3
 add-highlighter global/ show-whitespaces
 add-highlighter global/ show-matching
-colorscheme nvi
 set-option global autoreload yes
 set-option global scrolloff 10,10
 add-highlighter global/ regex \h+$ 0:Error
-

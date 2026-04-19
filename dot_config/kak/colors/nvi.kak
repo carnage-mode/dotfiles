@@ -75,5 +75,6 @@ evaluate-commands %sh{
         face global StatusLineMode ${yellow}
         face global StatusLineValue ${green}
         face global Whitespace ${dark_gray4}+f
+        face global crosshairs_line default,${dark_gray3}
     "
 }
