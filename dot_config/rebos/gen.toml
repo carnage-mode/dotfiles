@@ -17,11 +17,10 @@ items = [
     "fzf",
     "neovim",
     "tmux",
-    "emacs",
     "zoxide",
+    "kakoune",
     "fish",
-    "ghostty",
-    "pgcli"
+    "pgcli",
 ]
 
 [managers.cargo]
