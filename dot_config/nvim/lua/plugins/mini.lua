@@ -1,66 +1,53 @@
-return {
-  "echasnovski/mini.nvim",
-  version = "*",
+local animate = require "mini.animate"
 
-  config = function()
-    require("mini.pairs").setup()
+require("mini.animate").setup {
+  scroll = {
+    timing = animate.gen_timing.cubic {
+      easing = "in-out",
+      duration = 100,
+      unit = "total",
+    },
+  },
 
-    local animate = require "mini.animate"
-
-    if not vim.g.neovide then
-      require("mini.animate").setup {
-        scroll = {
-          timing = animate.gen_timing.cubic {
-            easing = "in-out",
-            duration = 100,
-            unit = "total",
-          },
-        },
-
-        cursor = {
-          enable = true,
-          path = animate.gen_path.spiral(),
-          timing = animate.gen_timing.cubic {
-            duration = 250,
-            unit = "total",
-          },
-        },
-      }
-    end
-
-    require("mini.surround").setup {
-      mappings = {
-        add = "ma", -- Add surrounding in Normal and Visual modes
-        delete = "md", -- Delete surrounding
-        find = "mf", -- Find surrounding (to the right)
-        find_left = "mF", -- Find surrounding (to the left)
-        highlight = "mh", -- Highlight surrounding
-        replace = "mr", -- Replace surrounding
-        update_n_lines = "mn", -- Update `n_lines`
-
-        suffix_last = "", -- Suffix to search with "prev" method
-        suffix_next = "", -- Suffix to search with "next" method
-      },
-    }
-
-    require("mini.jump").setup()
-
-    require("mini.move").setup {
-      mappings = {
-        left = "<C-A-h>",
-        right = "<C-A-l>",
-        down = "<C-A-j>",
-        up = "<C-A-k>",
-
-        -- Move current line in Normal mode
-        line_left = "<C-A-h>",
-        line_right = "<C-A-l>",
-        line_down = "<C-A-j>",
-        line_up = "<C-A-k>",
-      },
-    }
-
-    require("mini.icons").setup()
-    MiniIcons.mock_nvim_web_devicons()
-  end,
+  cursor = {
+    enable = true,
+    path = animate.gen_path.spiral(),
+    timing = animate.gen_timing.cubic {
+      duration = 250,
+      unit = "total",
+    },
+  },
 }
+
+require("mini.jump").setup {}
+
+require("mini.move").setup {
+  mappings = {
+    left = "<C-A-h>",
+    right = "<C-A-l>",
+    down = "<C-A-j>",
+    up = "<C-A-k>",
+
+    -- Move current line in Normal mode
+    line_left = "<C-A-h>",
+    line_right = "<C-A-l>",
+    line_down = "<C-A-j>",
+    line_up = "<C-A-k>",
+  },
+}
+
+require("mini.notify").setup {
+  window = {
+    config = {
+      anchor = "SE",
+      row = vim.o.lines - 2,
+      col = vim.o.columns,
+      title = "",
+      border = "none",
+    },
+    max_width_share = 0.3,
+    winblend = 10,
+  },
+}
+
+require("mini.pairs").setup {}
