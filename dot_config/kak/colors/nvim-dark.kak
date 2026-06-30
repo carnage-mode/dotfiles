@@ -1,86 +1,79 @@
-# nvim-dark theme
+# code
 
 evaluate-commands %sh{
-    # gray="rgb:928374"
-    # red="rgb:ffc0b9"
-    # green="rgb:b4f6c0"
-    # yellow="rgb:fce094"
-    # blue="rgb:9fd8ff"
-    # purple="rgb:d3869b"
-    # aqua="rgb:83efef"
-    # orange="rgb:fe8019"
+    blue="rgb:a6dbff"
+    cyan="rgb:8cf8f7"
+    green="rgb:b4f6c0"
+    magenta="rgb:ffcaff"
+    red="rgb:ffc0b9"
+    yellow="rgb:fce094"
 
-    blue="rgb:9fd8ff"
-    cyan="rgb:83efef"
-    green="rgb:aaedb7"
-    magenta="rgb:ffc3fa"
-    red="rgb:ffbcb5"
-    yellow="rgb:f4d88c"
+    gray1="rgb:eef1f8"
+    gray2="rgb:e0e2ea"
+    gray3="rgb:c4c6cd"
+    gray4="rgb:9b9ea4"
 
-    bg="rgb:14161B"
-    bg_alpha="rgba:282828a0"
-    bg1="rgb:3c3836"
-    bg2="rgb:504945"
-    bg3="rgb:665c54"
-    bg4="rgb:7c6f64"
+    dark_gray4="rgb:4f5258"
+    dark_gray3="rgb:2c2e33"
+    dark_gray2="rgb:14161b"
+    dark_gray1="rgb:07080d"
 
-    fg="rgb:ebdbb2"
-    fg_alpha="rgba:ebdbb2a0"
-    fg0="rgb:fbf1c7"
-    fg2="rgb:d5c4a1"
-    fg3="rgb:bdae93"
-    fg4="rgb:a89984"
+    bg=$dark_gray1
+    fg=$gray2
 
     echo "
-        # Code highlighting
-        face global value         ${purple}
-        face global type          ${yellow}
-        face global variable      ${blue}
+        face global Default ${fg},${bg}
+
+        face global value         default
+        face global type          ${cyan}
+        face global variable      default
         face global module        ${green}
-        face global function      ${blue}
+        face global function      ${cyan}
         face global string        ${green}
-        face global keyword       ${red}
-        face global operator      ${fg}
-        face global attribute     ${orange}
-        face global comment       ${gray}+i
+        face global keyword       default+b
+        face global operator      default
+        face global attribute     ${cyan}
+        face global comment       ${gray4}+i
         face global documentation comment
-        face global meta          ${aqua}
-        face global builtin       ${fg}+b
+        face global meta          default+b
+        face global builtin       default+b
 
-        # Markdown highlighting
-        # face global title     ${green}+b
-        # face global header    ${orange}
-        # face global mono      ${fg4}
-        # face global block     ${aqua}
-        # face global link      ${blue}+u
-        # face global bullet    ${yellow}
-        # face global list      ${fg}
+        face global title default+b
+        face global header default
+        face global bold default+b
+        face global italic default+i
+        face global mono documentation
+        face global block documentation
+        face global link ${cyan}
+        face global bullet ${cyan}
+        face global list ${cyan}
 
-        face global BufferPadding      ${bg2},${bg}
-        face global Default            ${fg},${bg}
+        face global BufferPadding ${dark_gray4}
         face global DiagnosticError    ${red}
         face global DiagnosticWarning  ${yellow}
-        face global Error              ${bg},${red}
-        face global Information        ${bg},${fg}
-        face global LineNumberCursor   ${yellow},${bg1}
-        face global LineNumbers        ${bg4}
-        face global LineNumbersWrapped ${bg1}
-        face global MatchingChar       ${fg},${bg3}+b
-        face global MenuBackground     ${fg},${bg2}
-        face global MenuForeground     ${bg2},${blue}
-        face global MenuInfo           ${bg}
-        face global PrimaryCursor      ${bg},${fg}+fg
-        face global PrimaryCursorEol   ${bg},${fg4}+fg
-        face global PrimarySelection   ${fg_alpha},${blue}+g
-        face global Prompt             ${yellow}
-        face global SecondaryCursor    ${bg},${bg4}+fg
-        face global SecondaryCursorEol ${bg},${bg2}+fg
-        face global SecondarySelection ${bg_alpha},${blue}+g
-        face global StatusCursor       ${bg},${fg}
-        face global StatusLine         ${fg},${bg}
-        face global StatusLineInfo     ${purple}
-        face global StatusLineMode     ${yellow}+b
-        face global StatusLineValue    ${red}
-        face global Whitespace         ${bg2}+f
+        face global Error ${red}
+        face global Information ${gray3},${dark_gray3}
+        face global LineNumberCursor ${fg}+b
+        face global LineNumbers ${gray4}
+        face global LineNumbersWrapped ${dark_gray4}
+        face global MatchingChar default,${dark_gray4}+b
+        face global MenuBackground ${gray3},${dark_gray3}
+        face global MenuForeground ${bg},${fg}
+        face global MenuInfo ${red}
+        face global PrimaryCursor ${bg},${fg}
+        face global PrimaryCursorEol PrimaryCursor
+        face global PrimarySelection default,${dark_gray4}+g
+        face global Prompt ${cyan}
+        face global Search ${green}
+        face global SecondaryCursor ${gray3},${dark_gray3}
+        face global SecondaryCursorEol ${gray3},${dark_gray3}
+        face global SecondarySelection default,${dark_gray3}+g
+        face global StatusCursor ${bg},${fg}
+        face global StatusLine ${gray3},${dark_gray3}
+        face global StatusLineInfo ${red}
+        face global StatusLineMode ${yellow}
+        face global StatusLineValue ${green}
+        face global Whitespace ${dark_gray4}+f
+        face global crosshairs_line default,${dark_gray3}
     "
 }

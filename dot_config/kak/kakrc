@@ -2,7 +2,7 @@ nop %sh{
     mkdir -p "$kak_config/autoload"
     ln -s "$kak_runtime/rc" "$kak_config/autoload/standard-library"
 }
-colorscheme nvi
+colorscheme nvim-dark
 cursorline
 
 add-highlighter global/ number-lines -relative -hlcursor -separator ' ' -min-digits 3
