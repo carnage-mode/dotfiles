@@ -192,7 +192,7 @@ require("mason").setup {}
 
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
-  "goimports",
+  -- add stuff here
 })
 
 require("mason-tool-installer").setup { ensure_installed = ensure_installed }
@@ -223,7 +223,7 @@ require("conform").setup {
   -- You can also specify external formatters in here.
   formatters_by_ft = {
     lua = { "stylua" },
-    go = { "goimports", "gofmt" },
+    go = { "gofmt" },
   },
 }
 
