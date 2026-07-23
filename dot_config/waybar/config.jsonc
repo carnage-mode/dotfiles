@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "modules-left": ["niri/workspaces"],
+    "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": ["clock"],
     "modules-right": [
         "privacy",
@@ -9,6 +9,8 @@
         "bluetooth",
         "wireplumber",
         "wireplumber#source",
+        "cpu",
+        "memory",
         "power-profiles-daemon",
         "battery",
     ],
@@ -51,18 +53,18 @@
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
       "tooltip": true,
       "format-icons": {
-        "performance": "performance",
+        "performance": "performant",
         "balanced": "balanced",
-        "power-saver": "power saving"
+        "power-saver": "efficient"
       }
     },
     "bluetooth": {
         "interval": 5,
-        "format-on": "bluetooth",
-        "format-off": "<s>bluetooth</s>",
-        "format-disabled": "<s>bluetooth</s>",
-        "format-connected": "bluetooth *",
-        "format-no-controller": "<s>bluetooth</s>",
+        "format-on": "blue",
+        "format-off": "<s>blue</s>",
+        "format-disabled": "<s>blue</s>",
+        "format-connected": "blue *",
+        "format-no-controller": "<s>blue</s>",
         "tooltip": true,
         "tooltip-format": "{device_enumerate}",
         "tooltip-format-off": "off",
@@ -96,25 +98,36 @@
        "max-length": "100",
     },
     "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 12,
+        "transition-duration": 150,
         "modules": [
-            {
-                "format": "bruh",
-                "type": "screenshare",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-            {
-                "format": "bruh",
-                "type": "audio-out",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-            {
-                "format": "bruh",
-                "type": "audio-in",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            }
+            { "type": "screenshare", "tooltip": false },
+            { "type": "audio-in", "tooltip": false },
+            { "type": "audio-out", "tooltip": false }
         ],
+        "ignore-monitor": true
+    },
+    "niri/window": {
+        "format": "{}",
+        "rewrite": {
+            "(.{45}).*": "$1..."
+        }
+    },
+    "cpu": {
+        "interval": 2,
+        "format": "cpu/{usage}%",
+        "max-length": 10,
+        "states": {
+            "critical": 75,
+        },
+    },
+    "memory": {
+        "interval": 2,
+        "format": "ram/{percentage}%",
+        "max-length": 10,
+        "states": {
+            "critical": 75,
+        },
     },
 }

@@ -1,7 +1,7 @@
 * {
   font-family: "BbConsole", monospace;
   font-weight: bold;
-  font-size: 12pt;
+  font-size: 11pt;
 }
 
 window#waybar {
@@ -13,7 +13,7 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 5px;
+  padding: 0 4px;
   background: transparent;
   color: white;
 }
@@ -28,7 +28,7 @@ window#waybar {
 .modules-right *,
 .modules-center * {
   border-bottom: 3px solid black;
-  padding: 0 10px;
+  padding: 0 8px;
 }
 
 .modules-center *:hover,
@@ -98,4 +98,16 @@ window#waybar {
 
 #power-profiles-daemon.power-saver:hover {
   border-color: #8ff0a4;
+}
+
+#privacy-item {
+    padding: 0;
+}
+
+#cpu.critical {
+    color: #f66151;
+}
+
+#memory.critical {
+    color: #f66151;
 }
