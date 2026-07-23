@@ -194,7 +194,7 @@ vim.api.nvim_create_autocmd("TermClose", {
   group = augroup,
   callback = function()
     if vim.v.event.status == 0 then
-      vim.api.nvim_buf_delete(0, {})
+      vim.api.nvim_buf_delete(0, { force = true })
     end
   end,
 })
